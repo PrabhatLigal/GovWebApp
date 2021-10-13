@@ -15,10 +15,7 @@ export class CovidRegisterComponent implements OnInit {
   locations: any[];
 
   public code: string = null;
-  public elementType: 'img' | 'url' | 'canvas' | 'svg' = null;
-  public level: 'L' | 'M' | 'Q' | 'H';
-  public scale: number;
-  public width: number;
+  isVisible = false;
 
   constructor(private covidService: CovidService) { }
 
@@ -29,21 +26,27 @@ export class CovidRegisterComponent implements OnInit {
         this.locations = locations;
       });
 
-    this.elementType = 'img';
-    this.level = 'M';
-    this.code = 'Initial QR code data string';
-    this.scale = 1;
-    this.width = 256;
+   
+  }
+
+  showModal(code){
+    this.code = code;
+    this.isVisible = true;
   }
 
   deleteAccount(id: string) {
-    // const account = this.accounts.find(x => x.id === id);
-    // account.isDeleting = true;
-    // this.covidService.delete(id)
-    //     .pipe(first())
-    //     .subscribe(() => {
-    //         this.accounts = this.accounts.filter(x => x.id !== id) 
-    //     });
+
+  }
+
+  
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
   }
 
 }

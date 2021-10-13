@@ -22,6 +22,7 @@
                     <span *ngIf="!account.isDeleting">Delete</span>
                 </button> -->
             </td>
+            <button nz-button [nzType]="'primary'" (click)="showModal(location._id)"><span>Show Modal</span></button>
         </tr>
         <tr *ngIf="!locations">
             <td colspan="4" class="text-center">
@@ -31,4 +32,8 @@
     </tbody>
 </table>
 
-<!-- <qrcode [qrdata]="'myAngularxQrCode'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode> -->
+<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <qr-code [value]="code"></qr-code>
+    </ng-container>
+  </nz-modal>
