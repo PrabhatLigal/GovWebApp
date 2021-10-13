@@ -10,6 +10,7 @@ export class AppComponent {
 
     constructor(private accountService: AccountService) {
         this.accountService.account.subscribe(x => this.account = x);
+        this.accountService.refresh();
     }
 
     logout() {

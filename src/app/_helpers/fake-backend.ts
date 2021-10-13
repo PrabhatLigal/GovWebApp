@@ -4,7 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
 
 import { AlertService } from '@app/_services';
-import { Role } from '@app/_models';
+import { Role, CovidCheckIn } from '@app/_models';
 
 // array in local storage for accounts
 const accountsKey = 'angular-10-signup-verification-boilerplate-accounts';
@@ -54,7 +54,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }    
         }
 
-        // route functions
 
         function authenticate() {
             const { email, password } = body;

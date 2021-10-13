@@ -1,0 +1,6 @@
+{"/api/*": {
+    "target": "https://ta1kpqid83.execute-api.us-east-1.amazonaws.com/dev/",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

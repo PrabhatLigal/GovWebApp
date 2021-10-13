@@ -39,9 +39,9 @@ export class AddEditComponent implements OnInit {
         });
 
         if (!this.isAddMode) {
-            this.accountService.getById(this.id)
-                .pipe(first())
-                .subscribe(x => this.form.patchValue(x));
+            // this.accountService.getById(this.id)
+            //     .pipe(first())
+            //     .subscribe(x => this.form.patchValue(x));
         }
     }
 
@@ -68,32 +68,10 @@ export class AddEditComponent implements OnInit {
     }
 
     private createAccount() {
-        this.accountService.create(this.form.value)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    this.alertService.success('Account created successfully', { keepAfterRouteChange: true });
-                    this.router.navigate(['../'], { relativeTo: this.route });
-                },
-                error: error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                }
-            });
+        
     }
 
     private updateAccount() {
-        this.accountService.update(this.id, this.form.value)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    this.alertService.success('Update successful', { keepAfterRouteChange: true });
-                    this.router.navigate(['../../'], { relativeTo: this.route });
-                },
-                error: error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                }
-            });
+    
     }
 }

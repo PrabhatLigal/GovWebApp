@@ -42,17 +42,17 @@ export class ResetPasswordComponent implements OnInit {
         // remove token from url to prevent http referer leakage
         this.router.navigate([], { relativeTo: this.route, replaceUrl: true });
 
-        this.accountService.validateResetToken(token)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    this.token = token;
-                    this.tokenStatus = TokenStatus.Valid;
-                },
-                error: () => {
-                    this.tokenStatus = TokenStatus.Invalid;
-                }
-            });
+        // this.accountService.validateResetToken(token)
+        //     .pipe(first())
+        //     .subscribe({
+        //         next: () => {
+        //             this.token = token;
+        //             this.tokenStatus = TokenStatus.Valid;
+        //         },
+        //         error: () => {
+        //             this.tokenStatus = TokenStatus.Invalid;
+        //         }
+        //     });
     }
 
     // convenience getter for easy access to form fields
@@ -70,17 +70,17 @@ export class ResetPasswordComponent implements OnInit {
         }
 
         this.loading = true;
-        this.accountService.resetPassword(this.token, this.f.password.value, this.f.confirmPassword.value)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    this.alertService.success('Password reset successful, you can now login', { keepAfterRouteChange: true });
-                    this.router.navigate(['../login'], { relativeTo: this.route });
-                },
-                error: error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                }
-            });
+        // this.accountService.resetPassword(this.token, this.f.password.value, this.f.confirmPassword.value)
+        //     .pipe(first())
+        //     .subscribe({
+        //         next: () => {
+        //             this.alertService.success('Password reset successful, you can now login', { keepAfterRouteChange: true });
+        //             this.router.navigate(['../login'], { relativeTo: this.route });
+        //         },
+        //         error: error => {
+        //             this.alertService.error(error);
+        //             this.loading = false;
+        //         }
+        //     });
     }
 }
