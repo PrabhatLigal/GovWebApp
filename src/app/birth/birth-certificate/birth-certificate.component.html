@@ -1,18 +1,25 @@
 
 <div class="mt-4">
   <h4>Birth Certificate</h4>
-  <div>{{certificate.givenName | titlecase}} {{certificate.surname | titlecase}}</div>
-  <div>{{certificate.sex | uppercase}}</div>
-  <div>{{certificate.birthDate | date:'yyyy/MM/dd'}}</div>
+  <div>  <span>Name:</span>
+    {{certificate.givenName | titlecase}} {{certificate.surname | titlecase}}</div>
+  <div> <span>Sex:</span> {{certificate.sex | uppercase}}</div>
+  <div><span>Date of Birth:</span> {{certificate.birthDate | date:'yyyy/MM/dd'}}</div>
   <div>
-    {{certificate.fatherGivenName | titlecase }} {{certificate.fatherSurname | titlecase }} <br>
-    {{certificate.motherGivenName | titlecase }} {{certificate.motherSurname | titlecase }}
+    <span>Father Name:</span>{{certificate.fatherGivenName | titlecase }} {{certificate.fatherSurname | titlecase }} <br>
+    <span>Mother Name:</span>{{certificate.motherGivenName | titlecase }} {{certificate.motherSurname | titlecase }}
+  </div>  
+  <div>
+    <span>Birth Place:</span>{{certificate.birthPlace }}
   </div>
+
   <div>
-    {{certificate.status ? "Approved" : "Pending" }}
+    <span>Informat Name:</span>{{certificate.informatName }}
   </div>
-  <div>
-    <button  *ngIf="!certificate.status" [disabled]="loading" class="btn btn-primary" (click)="approve()">
+
+
+  <div class="my-4">
+    <button  *ngIf="!certificate.status" [disabled]="loading" class="btn btn-primary mr-4" (click)="approve()">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Approve
     </button>
