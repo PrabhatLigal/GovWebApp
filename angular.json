@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-signup-verification-boilerplate": {
+    "mygov": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-signup-verification-boilerplate",
+            "outputPath": "dist/mygov",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,19 +76,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-signup-verification-boilerplate:build",
+            "browserTarget": "mygov:build",
             "proxyConfig": "./src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-signup-verification-boilerplate:build:production"
+              "browserTarget": "mygov:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-signup-verification-boilerplate:build"
+            "browserTarget": "mygov:build"
           }
         },
         "test": {
@@ -125,15 +125,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-signup-verification-boilerplate:serve"
+            "devServerTarget": "mygov:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-signup-verification-boilerplate:serve:production"
+              "devServerTarget": "mygov:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-signup-verification-boilerplate"
+  "defaultProject": "mygov"
 }

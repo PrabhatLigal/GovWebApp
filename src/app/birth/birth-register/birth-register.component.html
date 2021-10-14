@@ -1,3 +1,41 @@
-<p>
-  birth-register works!
-</p>
+<h4>Register Location</h4>
+<p>All resgitered location from covid checkin</p>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Register Location</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:30%">Name</th>
+            <th style="width:30%">Address</th>
+            <th style="width:30%">Code</th>
+            <th style="width:10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let location of locations">
+            <td>{{location.name}} </td>
+            <td>{{location.address}} {{location.post_code}}</td>
+            <td>{{location._id}}</td>
+            <td style="white-space: nowrap">
+                <!-- <a routerLink="edit/{{account.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteAccount(account.id)" class="btn btn-sm btn-danger btn-delete-account" [disabled]="account.isDeleting">
+                    <span *ngIf="account.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!account.isDeleting">Delete</span>
+                </button> -->
+                <button nz-button [nzType]="'primary'" (click)="showModal(location.name,location._id)"><span>Show QR</span></button>
+            </td>
+        </tr>
+        <tr *ngIf="!locations">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="title" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <div class="d-flex align-center p-4">
+            <qr-code [value]="code" size="400"></qr-code>
+        </div>
+    </ng-container>
+  </nz-modal>

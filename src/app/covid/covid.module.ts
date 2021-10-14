@@ -8,7 +8,7 @@ import { AddEditComponent } from './add-edit/add-edit.component'
 import { QRCodeModule } from 'angular2-qrcode';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   imports: [

@@ -15,7 +15,8 @@ export class CovidRegisterComponent implements OnInit {
   locations: any[];
 
   public code: string = null;
-  isVisible = false;
+  public isVisible = false;
+  public title:string = null;
 
   constructor(private covidService: CovidService) { }
 
@@ -29,8 +30,9 @@ export class CovidRegisterComponent implements OnInit {
    
   }
 
-  showModal(code){
+  showModal(title,code){
     this.code = code;
+    this.title = title;
     this.isVisible = true;
   }
 
