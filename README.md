@@ -1,5 +1,9 @@
-# angular-10-signup-verification-boilerplate
+# README
 
-Angular 10 Boilerplate - Email Sign Up with Verification, Authentication & Forgot Password
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f55ff3d3-760f-4b2b-8c83-7a88cfcbe63a/deploy-status)](https://app.netlify.com/sites/uow-gov-project/deploys)
 
-For documentation and a live demo see https://jasonwatmore.com/post/2020/08/29/angular-10-boilerplate-email-sign-up-with-verification-authentication-forgot-password
+# Development
+``
+npm install
+npm start
+``
