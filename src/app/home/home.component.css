@@ -1,0 +1,9 @@
+.card{
+    min-height: 24rem;
+
+}
+.card-img{
+    max-height: 12rem; 
+    object-fit: contain;
+    padding: 2rem;
+}

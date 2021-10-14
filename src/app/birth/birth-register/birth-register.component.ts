@@ -12,10 +12,10 @@ export class BirthRegisterComponent implements OnInit {
 
   certificates: any[];
 
-  constructor(private covidService: BirthService) { }
+  constructor(private birthService: BirthService) { }
 
   ngOnInit() {
-    this.covidService.getAll()
+    this.birthService.getAll()
       .subscribe(certificates => {
         console.log(certificates);
         this.certificates = certificates;

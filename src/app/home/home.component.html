@@ -1,6 +1,54 @@
 ﻿<div class="p-4">
-    <div class="container">
-        <h1> Welcome to My Gov</h1>
-        <p></p>
+    <div class="container mb-4">
+        <div class="d-flex align-center text-center flex-column" >
+            <img src="assets/bg.jpg" style="height: 20rem; object-fit: contain;">
+            <h1> Welcome to Gov</h1>
+
+
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="card"  >
+                        <img class="card-img" src="assets/covid.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Covid Services</h5>
+                          <p class="card-text">Help with covid related services.</p>
+                          <a  [routerLink]="['/covid']"  class="btn btn-primary text-white">View</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-4 mb-2">
+                    <div class="card " >
+                        <img class="card-img" src="assets/birth.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Birth,Death & Relationship Services</h5>
+                          <p class="card-text">Help with covid related services.</p>
+                          <a  [routerLink]="['/birth']"  class="btn btn-primary text-white">View</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-4 mb-2">
+                    <div class="card h-4" >
+                        <img class="card-img" src="assets/tax.png"  alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Taxation Services</h5>
+                          <p class="card-text">Help with covid related services.</p>
+                          <a [routerLink]="['/birth']" class="btn btn-primary text-white">View</a>
+                        </div>
+                      </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+     
+        
+
+ 
+
+
     </div>
 </div>

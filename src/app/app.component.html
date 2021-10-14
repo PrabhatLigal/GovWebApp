@@ -1,14 +1,17 @@
 ﻿<div class="app-container" [ngClass]="{ 'bg-light': account }">
     <!-- main nav -->
     <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="account">
-        <div class="navbar-nav">
+        <div class="navbar-nav mr-auto">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item nav-link">Home</a>
-            <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a>
+            <!-- <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a> -->
             <a routerLink="/birth" routerLinkActive="active" class="nav-item nav-link">Birth</a>
             <a routerLink="/covid" routerLinkActive="active" class="nav-item nav-link">Covid</a>
             <a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a>
-            <a (click)="logout()" class="nav-item nav-link">Logout</a>
         </div>
+        
+        <form class="my-2 my-lg-0">
+            <a (click)="logout()" class="ml-auto mr-1 text-white">Logout</a>
+          </form>
     </nav>
 
     
@@ -19,5 +22,14 @@
     <alert></alert>
 
     <!-- main router outlet -->
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
+
 </div>
+<footer class="text-muted py-4">
+    <div class="container">
+   
+      <p> © 2020, UOW SOSA Project</p>
+      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+    </div>
+  </footer>

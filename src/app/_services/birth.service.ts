@@ -25,11 +25,11 @@ export class BirthService {
     }
 
     approve(id: string){
-    return  this.http.get<BirthCertificate[]>(`${baseUrl}/certificate/${id}/approve`); 
+        return  this.http.patch(`${baseUrl}/certificate/approve/${id}`,''); 
     }
 
     disapprove(id: string){
-        return  this.http.get<BirthCertificate[]>(`${baseUrl}/certificate/${id}/disapprove`); 
+        return  this.http.patch(`${baseUrl}/certificate/disapprove/${id}`,''); 
     }
 
 

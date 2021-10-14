@@ -1,5 +1,7 @@
 export class BirthCertificate {
 
+    _id: string;
+
     givenName: string;
     surname: string;
     birthDate: Date;
@@ -16,5 +18,5 @@ export class BirthCertificate {
     informatName: string;
     informantDesc: string;
 
-    status: string;
+    status: boolean;
 }

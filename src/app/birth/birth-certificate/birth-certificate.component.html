@@ -1,0 +1,21 @@
+
+<div class="mt-4">
+  <h4>Birth Certificate</h4>
+  <div>{{certificate.givenName | titlecase}} {{certificate.surname | titlecase}}</div>
+  <div>{{certificate.sex | uppercase}}</div>
+  <div>{{certificate.birthDate | date:'yyyy/MM/dd'}}</div>
+  <div>
+    {{certificate.fatherGivenName | titlecase }} {{certificate.fatherSurname | titlecase }} <br>
+    {{certificate.motherGivenName | titlecase }} {{certificate.motherSurname | titlecase }}
+  </div>
+  <div>
+    {{certificate.status ? "Approved" : "Pending" }}
+  </div>
+  <div>
+    <button  *ngIf="!certificate.status" [disabled]="loading" class="btn btn-primary" (click)="approve()">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Approve
+    </button>
+    <a routerLink="..">Back</a>
+  </div>
+</div>
