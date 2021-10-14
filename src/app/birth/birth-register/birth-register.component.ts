@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BirthService } from '@app/_services';
+
 @Component({
   selector: 'app-birth-register',
   templateUrl: './birth-register.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BirthRegisterComponent implements OnInit {
 
-  constructor() { }
+
+  certificates: any[];
+
+  constructor(private covidService: BirthService) { }
 
   ngOnInit() {
+    this.covidService.getAll()
+      .subscribe(certificates => {
+        console.log(certificates);
+        this.certificates = certificates;
+      });
+
+   
   }
 
 }

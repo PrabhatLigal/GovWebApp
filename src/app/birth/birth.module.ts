@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BirthComponent } from './birth.component';
 import { BirthRoutingModule } from './birth-routing.module';
+import { BirthRegisterComponent } from './birth-register/birth-register.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import { BirthRoutingModule } from './birth-routing.module';
     ReactiveFormsModule,
     BirthRoutingModule
   ],
-  declarations: [BirthComponent]
+  declarations: [BirthComponent, BirthRegisterComponent]
 })
 export class BirthModule { }

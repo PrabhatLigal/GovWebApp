@@ -7,7 +7,7 @@ import { map, finalize } from 'rxjs/operators';
 import { environment } from '@environments/environment';
 import { BirthCertificate } from '@app/_models';
 
-const baseUrl = `${environment.apiUrl}/birthService`;
+const baseUrl = `${environment.apiUrl}/birthCertificate`;
 
 @Injectable({ providedIn: 'root' })
 export class BirthService {
