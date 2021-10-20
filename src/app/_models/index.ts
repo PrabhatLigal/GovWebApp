@@ -3,3 +3,4 @@ export * from './alert';
 export * from './role';
 export * from './covid-checkin';
 export * from './birth-certificate';
+export * from './tax-article';
