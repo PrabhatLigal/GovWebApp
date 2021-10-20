@@ -1,3 +1,50 @@
-<p>
-  add-edit works!
-</p>
+<h4 *ngIf="isAddMode">Create Article</h4>
+<h4 *ngIf="!isAddMode">Edit Article</h4>
+<form  *ngIf="!fetching" [formGroup]="form" (ngSubmit)="onSubmit()" >
+  <div class="form-row">
+    <div class="form-group col">
+      <label>Title</label>
+      <input formControlName="title" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
+
+      <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+        <div *ngIf="f.title.errors.required">Title is required</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col">
+      <label>Author</label>
+      <input formControlName="auther" class="form-control"   [ngClass]="{ 'is-invalid': submitted && f.auther.errors }"/>
+
+      <div *ngIf="submitted && f.auther.errors" class="invalid-feedback">
+        <div *ngIf="f.auther.errors.required">Author is required</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col">
+      <label>Content</label>
+      <textarea formControlName="description" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+        
+      </textarea>
+
+      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+        <div *ngIf="f.description.errors.required">Description is required</div>
+      </div>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Save
+      </button>
+      <a routerLink=".." class="btn btn-link">Cancel</a>
+    </div>
+    
+</form>
+<div *ngIf="fetching">
+  <div colspan="12" class="text-center">
+      <span class="spinner-border spinner-border-lg align-center"></span>
+  </div>
+</div>

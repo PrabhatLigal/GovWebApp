@@ -1,3 +1,41 @@
-<p>
-  article-list works!
-</p>
+<h4>Tax Articles</h4>
+<p>Articles related to tax services </p>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Create Article</a>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:20%">Title</th>
+            <th style="width:20%">Author</th>
+            <th style="width:50%">Content</th>
+            <th style="width:10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let article of articles">
+            <td>{{article.title}} </td>
+            <td>{{article.auther}}</td>
+            <td style=" white-space: nowrap;
+            overflow: hidden;
+            max-width: 20rem;
+            text-overflow: ellipsis;">{{article.description}}</td>
+            <td style="white-space: nowrap">
+              <a routerLink="edit/{{article._id}}" class="btn btn-sm btn-primary mr-1">Edit</a>            
+            </td>
+        </tr>
+        <tr *ngIf="!articles">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <nz-modal [(nzVisible)]="isVisible" [nzTitle]="title" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <div class="d-flex align-center p-4">
+            <qr-code [value]="code" size="400"></qr-code>
+        </div>
+    </ng-container>
+  </nz-modal> -->

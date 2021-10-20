@@ -13,7 +13,6 @@ import { AddEditComponent } from './add-edit/add-edit.component'
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    TaxModule,
     TaxRoutingModule
     // BrowserAnimationsModule
   ],

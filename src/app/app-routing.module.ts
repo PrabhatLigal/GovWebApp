@@ -18,7 +18,7 @@ const routes: Routes = [
     // { path: 'profile', loadChildren: profileModule, canActivate: [AuthGuard] },
     { path: 'birth', loadChildren: birthModule, canActivate: [AuthGuard] },
     { path: 'covid', loadChildren: covidModule, canActivate: [AuthGuard] },
-    { path: 'tax', loadChildren: covidModule, canActivate: [AuthGuard] },
+    { path: 'tax', loadChildren: taxModule, canActivate: [AuthGuard] },
     { path: 'admin', loadChildren: adminModule, canActivate: [AuthGuard], data: { roles: [Role.Admin] } },
 
     // otherwise redirect to home
