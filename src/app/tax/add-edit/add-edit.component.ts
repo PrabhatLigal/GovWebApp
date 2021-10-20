@@ -34,7 +34,6 @@ export class AddEditComponent implements OnInit {
   
     this.form = this.formBuilder.group({
       title: ['', Validators.required,],
-      auther: ['', Validators.required,],
       description: ['', Validators.required],
     }, {
 
@@ -47,8 +46,7 @@ export class AddEditComponent implements OnInit {
       .subscribe(article => {
         this.article = article.find(x => x._id === this.id);
         this.form.patchValue({ 
-          title: this.article.title, 
-          auther: this.article.auther,
+          title: this.article.title,       
           description: this.article.description
         })
         this.fetching = false;

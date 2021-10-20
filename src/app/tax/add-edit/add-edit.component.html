@@ -11,16 +11,7 @@
       </div>
     </div>
   </div>
-  <div class="form-row">
-    <div class="form-group col">
-      <label>Author</label>
-      <input formControlName="auther" class="form-control"   [ngClass]="{ 'is-invalid': submitted && f.auther.errors }"/>
 
-      <div *ngIf="submitted && f.auther.errors" class="invalid-feedback">
-        <div *ngIf="f.auther.errors.required">Author is required</div>
-      </div>
-    </div>
-  </div>
   <div class="form-row">
     <div class="form-group col">
       <label>Content</label>
